@@ -1,0 +1,18 @@
+<%- include('../partials/head',{title}) %>
+<%- include('../partials/header',{q}) %>
+
+<div class="container">
+<h1>Bukti Jackpot</h1>
+
+<div class="grid">
+<% posts.forEach(item=>{ %>
+<a href="/bukti/<%= item.id %>" class="card">
+<img src="<%= item.image %>" alt="">
+<h2><%= item.title %></h2>
+<p><%= item.excerpt %></p>
+</a>
+<% }) %>
+</div>
+</div>
+
+<%- include('../partials/footer') %>

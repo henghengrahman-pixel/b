@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Admin • Bukti JP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="container" style="max-width:420px">
+    <div class="card">
+      <h2>Login Admin</h2>
+      <div class="notice"></div>
+      <div style="height:8px"></div>
+      <form onsubmit="return login(event)">
+        <label>Username</label>
+        <input id="username" autocomplete="username" required>
+        <div style="height:8px"></div>
+        <label>Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+        <div style="height:12px"></div>
+        <button class="btn gold" type="submit">Masuk</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
