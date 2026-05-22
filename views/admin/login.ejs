@@ -1,0 +1,17 @@
+
+<%- include('../partials/head',{title:'Login'}) %>
+
+<div class="wrap" style="max-width:420px;margin-top:100px">
+<div class="card" style="padding:25px">
+<h2>ADMIN LOGIN</h2>
+
+<form method="post" action="/login">
+<input type="text" name="username" placeholder="Username"><br><br>
+<input type="password" name="password" placeholder="Password"><br><br>
+<button class="btn" type="submit">LOGIN</button>
+</form>
+
+</div>
+</div>
+
+<%- include('../partials/footer') %>

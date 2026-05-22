@@ -1,0 +1,32 @@
+
+<%- include('../partials/head',{title:'Dashboard'}) %>
+
+<div class="wrap">
+<h1>DASHBOARD</h1>
+
+<form method="post" action="/admin/post">
+<input type="text" name="title" placeholder="Judul"><br><br>
+<input type="text" name="thumb" placeholder="Link Thumbnail"><br><br>
+<textarea name="contentHtml" placeholder="Isi HTML"></textarea><br><br>
+<button class="btn">SIMPAN</button>
+</form>
+
+<hr>
+
+<div class="grid">
+<% posts.forEach(item=>{ %>
+<div class="card">
+<img src="<%= item.thumb %>">
+<div style="padding:16px">
+<h3><%= item.title %></h3>
+<form method="post" action="/admin/delete/<%= item.id %>?_method=DELETE">
+<button class="btn">HAPUS</button>
+</form>
+</div>
+</div>
+<% }) %>
+</div>
+
+</div>
+
+<%- include('../partials/footer') %>

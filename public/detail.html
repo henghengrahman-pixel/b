@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detail Bukti Jackpot</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- layout ringan untuk sidebar, tidak mengubah file CSS utama -->
+  <style>
+    .detail-layout{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:980px){.detail-layout{grid-template-columns:2fr 1fr}}
+    .aside h4{margin:0 0 10px 0}
+    .aside .item{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:12px;display:flex;flex-direction:column}
+    .aside .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;background:#2f3138}
+    .aside .body{padding:10px}
+    .aside h5{margin:0 0 6px 0;font-size:14px;line-height:1.4}
+    .aside .meta{font-size:11px;color:var(--muted);margin:0 0 8px 0}
+    .aside .btn{width:100%}
+  </style>
+</head>
+<body>
+  <main class="container detail">
+    <a class="btn back" href="index.html">← Kembali ke Beranda</a>
+
+    <div class="detail-layout">
+      <!-- konten utama -->
+      <div id="detail"></div>
+
+      <!-- sidebar: Bukti JP Lainnya -->
+      <aside class="aside">
+        <h4>Bukti JP Lainnya:</h4>
+        <div id="related"></div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="js/lazyload.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>
