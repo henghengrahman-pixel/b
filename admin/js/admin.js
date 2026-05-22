@@ -31,7 +31,7 @@ async function login(e){
     }
     flash('Login sukses'); 
     // jeda tipis biar toast sempat terlihat
-    setTimeout(()=>location.href='dashboard.html', 350);
+    setTimeout(()=>location.href='/admin/dashboard', 350);
   }catch(err){
     flash((err && err.message) || 'Login gagal', false);
     btn.disabled = false; btn.textContent = old;
