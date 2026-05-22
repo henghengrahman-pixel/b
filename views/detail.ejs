@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <%- include('partials/head') %>
+  <title><%= post.title %> - SOSMEDTOTO</title>
+</head>
+<body>
+<%- include('partials/header', { q: '' }) %>
+<main class="container detail">
+  <a class="btn back" href="/">← Kembali</a>
+  <article class="card detail-card">
+    <img class="thumb" src="<%= post.thumb || post.image || '/img/logo.png' %>" alt="<%= post.title %>" loading="lazy" decoding="async" onerror="this.src='/img/logo.png'">
+    <div class="body">
+      <h1><%= post.title %></h1>
+      <div class="meta"><%= new Date(post.date || Date.now()).toLocaleDateString('id-ID',{weekday:'long', day:'2-digit', month:'long', year:'numeric'}).toUpperCase() %></div>
+      <div class="content"><%- post.contentHtml || post.excerpt || '' %></div>
+    </div>
+  </article>
+  <% if (related.length) { %>
+  <section class="related">
+    <h2>Bukti JP Lainnya</h2>
+    <div class="grid">
+      <% related.forEach(function(p){ %>
+        <a class="rel-card" href="/detail/<%= encodeURIComponent(p.id) %>">
+          <img src="<%= p.thumb || p.image || '/img/logo.png' %>" alt="<%= p.title %>" loading="lazy" onerror="this.src='/img/logo.png'">
+          <span><%= p.title %></span>
+        </a>
+      <% }) %>
+    </div>
+  </section>
+  <% } %>
+</main>
+<%- include('partials/menu') %>
+</body>
+</html>

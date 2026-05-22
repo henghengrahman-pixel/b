@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Bukti JP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="brand">BKSOSMED</div>
+      <a href="/" target="_blank">Lihat Website</a>
+      <a class="active" href="/admin/dashboard">Bukti JP</a>
+      <form method="post" action="/admin/logout"><button class="btn red" type="submit">Logout</button></form>
+    </aside>
+    <main class="admin-main">
+      <div class="topbar">
+        <div><h1>Admin Bukti JP</h1><p>Login: <%= user %></p></div>
+        <button class="btn gold" onclick="addCard()">+ Tambahkan Bukti JP</button>
+      </div>
+      <div id="cards"></div>
+    </main>
+  </div>
+  <template id="card-tpl">
+    <div class="admin-card post-card">
+      <div class="card-head">
+        <span class="badge">Bukti JP</span>
+        <div class="head-actions">
+          <button class="btn green pub-btn" type="button">Publikasikan</button>
+          <button class="btn orange hide-btn" type="button">Sembunyikan</button>
+          <button class="btn red del-btn" type="button">Hapus</button>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div><label>Judul</label><input class="title" placeholder="Judul Postingan.."></div>
+        <div><label>Link Gambar</label><input class="thumb" placeholder="Link Gambar Utama Postingan.."></div>
+        <div><label>Deskripsi Singkat</label><input class="excerpt" placeholder="Deskripsi Singkat.."></div>
+      </div>
+      <div class="update small"></div>
+      <img class="preview" alt="Preview gambar">
+      <div class="hint">Upload gambar ke <a href="https://imgbb.com" target="_blank" rel="noopener">IMGBB</a>, lalu tempel link gambar di atas.</div>
+      <div class="toolbar">
+        <button type="button" onclick="fmt(this,'bold')"><b>B</b></button>
+        <button type="button" onclick="fmt(this,'italic')"><i>I</i></button>
+        <button type="button" onclick="fmt(this,'underline')"><u>U</u></button>
+        <button type="button" onclick="insertHtml(this,'<ul><li></li></ul>')">• List</button>
+        <button type="button" onclick="insertHtml(this,'<ol><li></li></ol>')">1. List</button>
+        <button type="button" onclick="insertHtml(this,'<p><br></p>')">Paragraf</button>
+      </div>
+      <div class="editor" contenteditable="true" spellcheck="false"></div>
+      <div class="actions"><button class="btn gold save-btn" type="button">Simpan Bukti JP</button></div>
+    </div>
+  </template>
+  <script>
+    window.__INITIAL_POSTS__ = <%- JSON.stringify(posts || []) %>;
+  </script>
+  <script src="/js/admin-ejs.js" defer></script>
+</body>
+</html>

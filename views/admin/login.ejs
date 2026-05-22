@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Admin • Bukti JP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="admin-card login-card">
+      <h2>Login Admin</h2>
+      <% if (error) { %><div class="notice error">Username atau password salah.</div><% } else { %><div class="notice">Masuk untuk kelola Bukti JP.</div><% } %>
+      <form method="post" action="/admin/login">
+        <label>Username</label>
+        <input name="username" autocomplete="username" required>
+        <label>Password</label>
+        <input name="password" type="password" autocomplete="current-password" required>
+        <button class="btn gold" type="submit">Masuk</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

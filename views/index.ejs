@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <%- include('partials/head') %>
+  <title>Bukti Jackpot Lunas - SOSMEDTOTO</title>
+</head>
+<body>
+<%- include('partials/header') %>
+<main class="container">
+  <h1 class="title">⦿ BUKTI JACKPOT LUNAS SOSMEDTOTO</h1>
+  <div class="marquee" role="marquee"><div class="track">Selamat datang di SOSMEDTOTO, Bandar Togel, Live Casino & Slot Online Terbesar di Indonesia.</div></div>
+  <div class="grid">
+    <% if (!posts.length) { %>
+      <div class="empty">Belum ada Bukti JP yang dipublikasikan.</div>
+    <% } %>
+    <% posts.forEach(function(p){ %>
+      <article class="card">
+        <img class="thumb" src="<%= p.thumb || p.image || '/img/logo.png' %>" alt="<%= p.title %>" loading="lazy" decoding="async" onerror="this.src='/img/logo.png'">
+        <div class="body">
+          <h5><%= p.title %></h5>
+          <div class="meta"><%= new Date(p.date || Date.now()).toLocaleDateString('id-ID',{weekday:'long', day:'2-digit', month:'long', year:'numeric'}).toUpperCase() %></div>
+          <div class="excerpt"><%= p.excerpt || '' %></div>
+          <a class="btn read" href="/detail/<%= encodeURIComponent(p.id) %>">Read More</a>
+        </div>
+      </article>
+    <% }) %>
+  </div>
+  <%- include('partials/footer-info') %>
+</main>
+<%- include('partials/menu') %>
+</body>
+</html>
