@@ -7,11 +7,11 @@ async function me(){
     const r = await fetch('/api/me');
     if(!r.ok) throw 0;
     return r.json();
-  }catch{ location = 'login.html'; return null; }
+  }catch{ location = '/admin/login'; return null; }
 }
 
 async function logout(){
-  try{ await fetch('/api/logout',{method:'POST'}); }finally{ location='login.html'; }
+  try{ await fetch('/api/logout',{method:'POST'}); }finally{ location='/admin/login'; }
 }
 
 // toolbar helpers (pakai perintah bawaan browser biar ringan)
