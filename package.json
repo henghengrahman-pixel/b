@@ -1,0 +1,7 @@
+<header class="site-header">
+  <a class="brand" href="/">BUKTI JP</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/admin">Admin</a>
+  </nav>
+</header>
